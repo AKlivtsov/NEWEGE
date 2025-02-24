@@ -1,0 +1,12 @@
+for 18 num 
+
+1. copy formating from table
+2. copy first number from table
+3. set formula by hor and ver
+4. make complex formula for suuming max of prev numbers and new
+5. get answer and replace max in formula for min
+6. profit
+
+for that 18 num 
+
+=МАКС()
