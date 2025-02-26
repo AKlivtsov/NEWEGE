@@ -1,13 +1,18 @@
 with open("2025-02-18_24num/24_3.txt", "r+") as file:
-    st = file.read()
-    mx = 0
-    y = []
+    st = file.readline()
+    count_y = 0
+    left_frame = 0
+    right_frame = 0
 
     for i in range(len(st)):
         if st[i] == "Y":
-            y.append(i)
-    for i in range(len(y) - 151):
-        if y[i + 151] - y[i] > mx:
-            mx = y[i + 151] - y[i]
+            count_y += 1
+        
+        while count_y > 150:
+            count_y -= st[left_frame] == "Y"
+            left_frame += 1
 
-print(mx - 1)
+        right_frame = max(right_frame, i - left_frame + 1)
+
+print(right_frame)
+
