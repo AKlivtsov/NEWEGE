@@ -1,4 +1,4 @@
-with open("2025-02-18_24num/24_2.txt", "r") as file:
+with open("2025-02-18_24num/24_5.txt", "r") as file:
     line = file.readline()
 
 count_answer = 0
@@ -16,7 +16,7 @@ for i in range(len(line) - 2023): # 'cause frame is moving to 2023 sym
     if line[i] == "A":
         num_of_a -= 1
     elif line[i] == "Z":
-        num_of_a -= 1
+        num_of_z -= 1
 
     # if last symbol is A or Z, count it up
     if line[i + 2023] == "A":

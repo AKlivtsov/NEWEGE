@@ -1,0 +1,4 @@
+ord func returns 
+
+
+ord(c2) - ord(c1) == -1 'cause c2 = B, c1 = A
