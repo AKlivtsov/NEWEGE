@@ -1,0 +1,12 @@
+text = [int(x) for x in open("2025-03-13_17num/17 (3).txt", "r")]
+ans = []
+
+for i in range(0, len(text)):
+    for j in range(i+1, len(text)):
+        a, b = text[i], text[j]
+
+        if ((a+b) % 2 != 0) and ((a * b) % 3 == 0):
+            ans.append(a+b)
+
+print(len(ans))
+print(max(ans))

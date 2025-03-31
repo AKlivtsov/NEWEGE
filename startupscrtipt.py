@@ -10,7 +10,7 @@ def create_new_folder():
     os.makedirs(folder_name, exist_ok=True)
 
     # create a python file in the new folder
-    with open(os.path.join(folder_name, f"{folder_name}.py"), 'w') as f:
+    with open(os.path.join(folder_name, "task1.py"), 'w') as f:
         pass
 
     # create a text file in the new folder
