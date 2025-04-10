@@ -1,19 +1,10 @@
-def func(n: int) -> int:
-  n_bin = bin(n)[2:]
-
-  if n % 4 == 0:
-    n_bin += n_bin[:2]
-  else:
-    n_bin += bin(n % 4)[2:]
-
-  while n_bin[:-1] == '0':
-    n_bin = n_bin[:-1]
-
-  return int(n_bin, 2)
-
-for i in range(999):
-  res = func(i)
-  print(res, i) 
-
-# ans needs to be 16 
-  
+for a in range(0, 10**5): 
+    k = True
+    for x in range(0, 10**5):
+        if ((x & 21074 != 0) <= ((x & 12369 == 0) <= (x & a != 0)))==0:
+            k = False
+            break
+    if k == True:
+        print(a)
+        break
+    
