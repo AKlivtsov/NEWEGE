@@ -1,10 +1,8 @@
-for a in range(0, 10**5): 
-    k = True
-    for x in range(0, 10**5):
-        if ((x & 21074 != 0) <= ((x & 12369 == 0) <= (x & a != 0)))==0:
-            k = False
-            break
-    if k == True:
-        print(a)
-        break
-    
+# (A == B) and C == 1
+
+from itertools import product
+
+c = 0
+for a, b, c in product((0, 1), repeat=3):
+    if (a or b) == ((a and b) <= 0):
+        print(a, b, c)
