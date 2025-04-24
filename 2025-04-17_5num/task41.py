@@ -9,5 +9,5 @@ def alg(n):
 
 for x in range(10**9):
     if int(alg(x)) > 170:
-        print(x)  # 2
+        print(x)  # 2 #43
         break
