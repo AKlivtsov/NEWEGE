@@ -10,7 +10,7 @@ def f(x):
         return a[0], a[1]
     else:
         return 0
-    
+
 
 for i in range(174457, 174505 + 1):
     if f(i) != 0:
