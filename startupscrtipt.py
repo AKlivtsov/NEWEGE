@@ -8,7 +8,7 @@ def create_new_folder():
     folder_name = f"{today}_{type_of_task}"
     os.makedirs(folder_name, exist_ok=True)
 
-    with open(folder_name + "/task1-3.py", "w") as f:
+    with open(folder_name + "/task1.py", "w") as f:
         pass
 
     with open(folder_name + "/linkToTasks.txt", "w") as f:
