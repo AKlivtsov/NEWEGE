@@ -1,25 +1,17 @@
-from itertools import product
-from re import sub
 
 with open("seven_probe/demo_2025_24.txt", "r+") as file:
     line = file.readline()
-    line = "9*-97969909*06-6968*0*09-6688-000697770*9-907797868668**-879-96-08899809-7-*"
+    line = line.replace('-', '*')
+    line = line.replace('*0*', '*5*')i
+    line = line.replace('**', 'x')
+    line = line.replace('*0', 'x')
+    line = line.replace('x0', 'x')
+    line = line.replace('x*', 'x')
+    line = line.replace('*x', 'x')
+    a = line.split('x')
+    c = 0
+    for i in a:
+        if len(i) > 3:
+            c = max(c, len(i))
 
-    start = 0
-    end = 0
-    for i in range(len(line)-1):
-        if line[i] in "-*0":
-            
-            
-
-    line = line.split("A")
-
-    max_len = 0
-    for i in range(len(line) - 3):
-
-        if line[i].endswith("-") or line[i].endswith("*"):
-            line.pop(i)
-
-    max_len = len(max(line))
-
-    print(max_len)  # 165
+    print(c)  # 154
