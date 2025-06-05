@@ -3,23 +3,23 @@ from re import sub
 
 with open("seven_probe/demo_2025_24.txt", "r+") as file:
     line = file.readline()
-    line = "7**090007*769099-77*090077808-66869*-90*-*-9799"
+    line = "9*-97969909*06-6968*0*09-6688-000697770*9-907797868668**-879-96-08899809-7-*"
 
-    for comb in product("-*", repeat=2):
-        comb=''.join(comb)
-        line = line.replace(comb, "A")
+    start = 0
+    end = 0
+    for i in range(len(line)-1):
+        if line[i] in "-*0":
+            
+            
 
-    line = line.replace("-0", "A")
-    line = line.replace("*0", "A")
     line = line.split("A")
 
     max_len = 0
-    for subline in line:
-        if subline.startswith("0") or subline.startswith("-") or subline.startswith("*"):
-            line.remove(subline)
- 
-        max_len = max(max_len, len(subline))
+    for i in range(len(line) - 3):
 
-    print(max_len) # 165
-    print(line)
-        
+        if line[i].endswith("-") or line[i].endswith("*"):
+            line.pop(i)
+
+    max_len = len(max(line))
+
+    print(max_len)  # 165
