@@ -17,7 +17,7 @@ with open("eight_probe/17-1.txt", "r+") as file:
         b_r = str(abs(b))[0]
         c_r = str(abs(c))[0]
 
-        if a_r != b_r or a_r != c_r:
+        if a_r != b_r or a_r != c_r or b_r != c_r:
             continue
 
         goodOne = False
@@ -28,11 +28,11 @@ with open("eight_probe/17-1.txt", "r+") as file:
         if not goodOne:
             continue
 
-        if abs(a) + abs(a) + abs(a) >= maxi:
+        if abs(a+b+c) >= maxi:
             continue
 
         count += 1
-        max_sum = max(max_sum, abs(a) + abs(a) + abs(a))
+        max_sum = max(max_sum, abs(a+b+c))
 
-    print(count)  # 12
-    print(max_sum)  # 13428
+    print(count)   # 1
+    print(max_sum) # 45768
