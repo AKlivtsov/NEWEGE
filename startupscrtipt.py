@@ -11,9 +11,6 @@ def create_new_folder():
     with open(folder_name + "/task1.py", "w") as f:
         pass
 
-    with open(folder_name + "/linkToTasks.txt", "w") as f:
-        pass
-
     print(f"New folder and python file created: {folder_name}")
 
 
