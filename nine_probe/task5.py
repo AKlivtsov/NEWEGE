@@ -8,8 +8,9 @@ def f(n):
 
     return int(n_bin, 2)
 
-
+maxi = 0
 for N in range(10000, 0, -1):
     if f(N) < 410:
-        print(f(N))
-        break
+        maxi = max(maxi, f(N))
+
+print(maxi)

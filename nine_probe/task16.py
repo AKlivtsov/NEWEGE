@@ -2,6 +2,7 @@ import sys
 
 sys.setrecursionlimit(9999)
 
+
 def rec(n):
     if n == 1:
         return 1
@@ -11,4 +12,4 @@ def rec(n):
         return 0
 
 
-print(rec(5168) / 11 + rec(5166) / rec(5165))
+print((rec(5168) // 11 + rec(5166)) // rec(5165))  # 802257043296

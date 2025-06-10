@@ -4,6 +4,9 @@ count = 0
 for comb in product("01234567", repeat=7):
     comb = "".join(comb)
 
+    if comb[0] == "0":
+        continue
+
     if comb.count("0") != 2:
         continue
 
@@ -16,9 +19,11 @@ for comb in product("01234567", repeat=7):
             bad = True
         elif a % 2 != 0 and b % 2 != 0:
             bad = True
+
     if bad:
         continue
 
     count += 1
+    print(comb)
 
-print(count)  # 5760
+print(count)  # 4032
