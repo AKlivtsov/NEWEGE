@@ -2,29 +2,24 @@ with open("nine_probe/9.txt", "r+") as file:
     for line in file.readlines():
         line = [int(x) for x in line.split()]
 
-        occurences = []
+        occurences = {}
         for num in line:
-            occurences.append(line.count(num))
-        occurences.sort()
+            occurences[num] = line.count(num)
 
-        if occurences != [1, 1, 1, 1, 2, 2]:
+        if list(occurences.values()).count(2) != 2:
             continue
 
         if line.count(max(line)) > 1:
             continue
 
-        rep = 0
+        max_num = line.pop(list.index(max(line)))
+        min1 = 0
+        min2 = 0
         for num in line:
-            if line.count(num) > 1:
-                rep = num
+            if min1 != 0 and min2 != 0:
                 break
 
-        line.sort()
+            if li
 
-        min_a = line[0]
-        min_b = line[1]
-
-        if rep**2 >= (min_a**2 + min_b**2):
-            continue
 
         print(line)

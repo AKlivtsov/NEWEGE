@@ -1,5 +1,5 @@
 with open("nine_probe/24.txt", "r+") as file:
-    ans = []
+    maxi = 0
     l = file.read()
     l = l.replace("+", "!")
     l = l.replace("**", "!")
@@ -12,36 +12,28 @@ with open("nine_probe/24.txt", "r+") as file:
     for item in l:
         if "*" not in item:
             continue
-        if item[0] == "*":
-            item = item[1:]
 
-        if item[-1] == "*":
-            item = item[:-1]
-        ans.append([int(num) for num in item.split("*")])
-
-maxi = 0
-for nums in ans:
-    if 0 not in nums:
-        continue
-
-    if nums == [0]:
-        continue
-
-    bad = False
-    for num in nums:
-        if num == 0:
+        h = [num for num in item.split("*")]
+        if "0" not in h:
             continue
 
-        if str(num)[-1] != "5":
-            bad = True
+        if "" in h:
+            h.remove("")
 
-    if bad:
-        continue
+        bad = False
+        for num in h:
+            if (int(num) % 2 != 0) or (str(num)[-1] == "0"):
+                bad = True
 
-    nums.append("*" * (len(nums) - 1))
-    comb = ""
-    for sub in nums:
-        comb += str(sub)
-    maxi = max(maxi, len(comb))
+        if bad:
+            continue
+
+        h.append("*" * (len(h) - 1))
+
+        comb = ""
+        for sub in h:
+            comb += str(sub)
+
+        maxi = max(maxi, len(comb))
 
 print(maxi)

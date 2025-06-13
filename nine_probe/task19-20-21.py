@@ -13,5 +13,5 @@ def f(s, m):
 print("19: ", *[s for s in range(25, 100) if f(s, 2) and not f(s, 1)])  # 47
 print(
     "20: ", *[s for s in range(25, 100) if f(s, 3) and not f(s, 1) and not f(s, 2)]
-)  # 49 52
-print("21: ", *[s for s in range(25, 100) if f(s, 4) and not f(s, 2)])  # 51
+)  # 50 52
+print("21: ", *[s for s in range(25, 100) if f(s, 4) and not f(s, 2)])  # 53
